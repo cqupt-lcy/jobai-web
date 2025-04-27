@@ -1,4 +1,6 @@
 'use client'
+
+import { useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import { useSelector } from 'react-redux'
 import { RootState } from '@/store'
@@ -10,7 +12,7 @@ export default function WelcomePage() {
   const handleClick = () => {
     const token = localStorage.getItem('token')
     if (isLoggedIn || token) {
-      router.push('/home') // 登录则进入主页
+      router.push('/') // 登录则进入主页
     } else {
       router.push('/login') // 未登录跳转登录页
     }
